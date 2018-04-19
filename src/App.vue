@@ -2,6 +2,7 @@
   <div id="app">
     <Spinner name="circle" />
     <Spinner name="cube-grid" color="steelblue"/>
+    <Spinner name="wave" color="purple"/>
   </div>
 </template>
 

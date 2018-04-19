@@ -8,20 +8,20 @@
 </template>
 
 <script>
-import '../css/base.css'
-import '../css/loaders-css.css'
-import '../css/fade-in.css'
-import '../css/chasing-dots.css'
-import '../css/circle.css'
-import '../css/cube-grid.css'
-import '../css/double-bounce.css'
-import '../css/folding-cube.css'
-import '../css/pulse.css'
-import '../css/rotating-plane.css'
-import '../css/three-bounce.css'
-import '../css/wandering-cubes.css'
-import '../css/wave.css'
-import '../css/wordpress.css'
+import './css/base.css'
+import './css/loaders-css.css'
+import './css/fade-in.css'
+import './css/chasing-dots.css'
+import './css/circle.css'
+import './css/cube-grid.css'
+import './css/double-bounce.css'
+import './css/folding-cube.css'
+import './css/pulse.css'
+import './css/rotating-plane.css'
+import './css/three-bounce.css'
+import './css/wandering-cubes.css'
+import './css/wave.css'
+import './css/wordpress.css'
 
 export default {
   name: 'Spinner',
