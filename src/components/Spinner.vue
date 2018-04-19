@@ -1,5 +1,8 @@
 <template>
-  <div :class="loading.className">
+  <div
+  v-if="loading.className !== ''"
+  :class="loading.className"
+  :style="color !== ''? 'color: '+ color+ ';': ''">
     <div :key="index" v-for="(_, index) in loading.divCount"></div>
   </div>
 </template>
@@ -28,7 +31,8 @@ export default {
       require: true
     },
     color: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -74,7 +78,15 @@ export default {
   },
   computed: {
     loading () {
-      return this.spinkitSpinners[this.name]
+      const spinkit = this.spinkitSpinners[this.name]
+      if (spinkit !== undefined) {
+        return spinkit
+      } else {
+        return {
+          className: '',
+          divCount: 0
+        }
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Spinner name="circle" />
+    <Spinner name="cube-grid" color="steelblue"/>
   </div>
 </template>
 
