@@ -10,6 +10,10 @@
     "build": "node build/build.js",
     "bundle": "bili src/components/Spinner.vue"
   },
+  "main": "dist/vue-spinkit.min.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "vue": "^2.5.2"
   },
