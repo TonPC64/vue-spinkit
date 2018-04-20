@@ -2,20 +2,28 @@
 
 > A collection of loading indicators animated with CSS for VueJS
 
-## Build Setup
+## Inspiration
+* [Spinkit](http://tobiasahlin.com/spinkit/) css animated loading
+* [react-spinkit](https://github.com/KyleAMathews/react-spinkit)  
 
-``` bash
-# install dependencies
-npm install
+## Installation
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+```bash
+# use yarn
+yarn add vue-spinkit
+# use npm
+npm install --save vue-spinkit
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## How to use
+```js
+import Vue from 'vue'
+import Spinner from 'vue-spinkit'
+
+Vue.component('Spinner', Spinner)
+```
+
+## In file vue
+```html
+<Spinner name="circle" color="red"/>
+```
