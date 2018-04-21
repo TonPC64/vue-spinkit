@@ -19,6 +19,13 @@
     "type" : "git",
     "url" : "https://github.com/TonPC64/vue-spinkit.git"
   },
+  "homepage": "http://vue-spinkit.surge.sh",
+  "keywords": [
+    "spinkit",
+    "vue-spinkit",
+    "loading",
+    "vue-loading"
+  ],
   "dependencies": {
     "loaders.css": "^0.1.2",
     "vue": "^2.5.2"
@@ -81,5 +88,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "license": "MIT"
 }
