@@ -1,0 +1,12 @@
+/public/
+/src/
+/build/
+/config/
+/static/
+.babelrc
+.editconfig
+.eslintignore
+.eslintrc.js
+.postcssrc.js
+bili.config.js
+index.html

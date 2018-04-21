@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "lts/*"
+cache:
+  directories:
+    - "node_modules"
+before_script:
+  - yarn
+script: 
+  - yarn bundle
+  - yarn build
+deploy:
+  - provider: pages
+    skip-cleanup: true
+    keep-history: true
+    github-token: $GITHUB_TOKEN
+    local-dir: public
+  - provider: npm
+    email: ${EMAIL}
+    api_key: ${AUTH_TOKEN}
+    skip_cleanup: true
+  on:
+    branch: master
