@@ -2,6 +2,11 @@
 
 > A collection of loading indicators animated with CSS for VueJS
 
+![](https://img.shields.io/badge/language-vue-green.svg)  
+![](https://img.shields.io/badge/license-MIT-000000.svg)  
+[![NPM Package](https://img.shields.io/npm/v/vue-spinkit.svg)](https://www.npmjs.com/package/vue-spinkit) 
+[![NPM Downloads](https://img.shields.io/npm/dm/vue-spinkit.svg)](https://npmjs.org/package/vue-spinkit)
+
 ## Inspiration
 * [Spinkit](http://tobiasahlin.com/spinkit/) css animated loading
 * [react-spinkit](https://github.com/KyleAMathews/react-spinkit)  
