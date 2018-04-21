@@ -9,7 +9,8 @@
 
 ## Inspiration
 * [Spinkit](http://tobiasahlin.com/spinkit/) css animated loading
-* [react-spinkit](https://github.com/KyleAMathews/react-spinkit)  
+* [react-spinkit](https://github.com/KyleAMathews/react-spinkit)
+* [loaders.css](https://connoratherton.com/loaders)
 
 ## [DEMO](http://vue-spinkit.surge.sh/)
 
