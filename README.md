@@ -6,6 +6,8 @@
 * [Spinkit](http://tobiasahlin.com/spinkit/) css animated loading
 * [react-spinkit](https://github.com/KyleAMathews/react-spinkit)  
 
+## [DEMO](http://vue-spinkit.surge.sh/)
+
 ## Installation
 
 ```bash
