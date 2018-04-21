@@ -14,7 +14,7 @@ deploy:
     skip-cleanup: true
     keep-history: true
     github-token: $GITHUB_TOKEN
-    local-dir: public
+    local-dir: dist
     on:
       branch: master
   - provider: npm

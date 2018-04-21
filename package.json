@@ -10,10 +10,15 @@
     "build": "node build/build.js",
     "bundle": "bili src/components/Spinner.vue"
   },
-  "main": "dist/vue-spinkit.min.js",
+  "main": "public/vue-spinkit.min.js",
   "files": [
-    "dist"
+    "public"
   ],
+  "repository" :
+  { 
+    "type" : "git",
+    "url" : "https://github.com/TonPC64/vue-spinkit.git"
+  },
   "dependencies": {
     "loaders.css": "^0.1.2",
     "vue": "^2.5.2"
