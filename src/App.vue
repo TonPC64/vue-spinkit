@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <div :key="spin" v-for="spin in allSpinner" class="loading">
-      {{spin}}
-      <Spinner :name="spin"/>
+    <div :key="spin" v-for="(spin, index) in allSpinner" class="loading">
+      <code>
+        {{showExam(spin, color[index])}}
+      </code>
+      <Spinner :name="spin" :color="color[index]"/>
     </div>
   </div>
 </template>
@@ -10,7 +12,7 @@
 <script>
 import Spinner from './components/Spinner'
 import spinners from './components/spinners'
-
+import randomColor from 'randomcolor'
 export default {
   name: 'App',
   components: {
@@ -18,7 +20,16 @@ export default {
   },
   data () {
     return {
-      allSpinner: Object.keys(spinners.allSpinners)
+      allSpinner: Object.keys(spinners.allSpinners),
+      color: randomColor({
+        count: Object.keys(spinners.allSpinners).length
+      })
+    }
+  },
+  methods: {
+    showExam (name, color = '') {
+      const newcolor = color !== '' ? `color="${color}"` : ''
+      return `<Spinner name="${name}" ${newcolor}/>`
     }
   }
 }

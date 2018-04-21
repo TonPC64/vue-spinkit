@@ -1541,10 +1541,6 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-begeta@^0.1.17:
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/begeta/-/begeta-0.1.17.tgz#e2041b554f72b595e8ed7eb5bad19d3bd7c16e1d"
-
 bfj-node4@^5.2.0:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/bfj-node4/-/bfj-node4-5.3.1.tgz#e23d8b27057f1d0214fc561142ad9db998f26830"
@@ -6248,6 +6244,10 @@ randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.0.6.tgz#d302c522948588848a8d300c932b44c24231da80"
   dependencies:
     safe-buffer "^5.1.0"
+
+randomcolor@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/randomcolor/-/randomcolor-0.5.3.tgz#7f90f2f2a7f6d5a52232161eeaeeaea9ac3b5815"
 
 randomfill@^1.0.3:
   version "1.0.4"
