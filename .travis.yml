@@ -15,9 +15,11 @@ deploy:
     keep-history: true
     github-token: $GITHUB_TOKEN
     local-dir: public
+    on:
+      branch: master
   - provider: npm
     email: ${EMAIL}
     api_key: ${AUTH_TOKEN}
     skip_cleanup: true
-  on:
-    branch: master
+    on:
+      branch: master
