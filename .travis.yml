@@ -10,11 +10,10 @@ script:
   - yarn bundle
   - yarn build
 deploy:
-  - provider: pages
+  - provider: surge
+    project: ./dist/
+    domain: vue-spinkit.surge.sh  
     skip-cleanup: true
-    keep-history: true
-    github-token: $GITHUB_TOKEN
-    local-dir: dist
     on:
       branch: master
   - provider: npm
