@@ -1,7 +1,16 @@
 <template>
   <div
   v-if="loading.className !== ''"
-  :class="'sk-fade-in sk-spinner ' + loading.className"
+  :class="[
+    {
+      'sk-fade-in': fadeIn === 'full' && !noFadeIn,
+      'sk-fade-in-half-second': fadeIn === 'half' && !noFadeIn,
+      'sk-fade-in-quarter-second': fadeIn === 'quarter' && !noFadeIn,
+      [className]: !!className
+    },
+    'sk-spinner',
+    loading.className
+  ]"
   :style="color !== ''? 'color: '+ color+ ';': ''">
     <div :key="index" v-for="(_, index) in loading.divCount"></div>
   </div>
@@ -14,9 +23,21 @@ export default {
   props: {
     name: {
       type: String,
-      require: true
+      default: 'three-bounce'
     },
     color: {
+      type: String,
+      default: ''
+    },
+    noFadeIn: {
+      type: Boolean,
+      default: false
+    },
+    fadeIn: {
+      type: String,
+      default: 'full'
+    },
+    className: {
       type: String,
       default: ''
     }
