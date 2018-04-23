@@ -35,3 +35,13 @@ Vue.component('Spinner', Spinner)
 ```html
 <Spinner name="circle" color="red"/>
 ```
+
+## Props
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| name | string | 'three-bounce' | specify spinner to use (defaults to line-scale-pulse-out-rapid). |
+| color | string |  | programmatically set the color of the spinners; this can either be a hex value or a color word. |
+| noFadeIn | boolean | false | set use fade in |
+| fadeIn | string | 'full' | set the time before the spinner fades in. Have 'full', 'half' and 'quarter' |
+| className | string | | add a custom classname to the outer div |
