@@ -64,6 +64,7 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "prismjs": "^1.14.0",
     "randomcolor": "^0.5.3",
     "rimraf": "^2.6.0",
     "rollup-plugin-vue": "^3.0.0",
