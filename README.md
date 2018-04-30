@@ -14,6 +14,10 @@
 * [loaders.css](https://connoratherton.com/loaders)
 
 ## [DEMO](http://vue-spinkit.surge.sh/)
+![](./static/example1.gif)
+![](./static/example2.gif)
+![](./static/example3.gif)
+![](./static/example4.gif)
 
 ## Installation
 
