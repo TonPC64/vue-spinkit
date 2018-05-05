@@ -69,18 +69,20 @@ export default {
 
 <style scoped>
 @import 'loaders.css';
-@import './css/base.css';
 @import './css/loaders-css.css';
+@import './css/base.css';
 @import './css/fade-in.css';
+
+@import './css/rotating-plane.css';
+@import './css/double-bounce.css';
+@import './css/wave.css';
+@import './css/wandering-cubes.css';
+@import './css/pulse.css';
 @import './css/chasing-dots.css';
+@import './css/three-bounce.css';
 @import './css/circle.css';
 @import './css/cube-grid.css';
-@import './css/double-bounce.css';
+@import './css/fading-circle.css';
 @import './css/folding-cube.css';
-@import './css/pulse.css';
-@import './css/rotating-plane.css';
-@import './css/three-bounce.css';
-@import './css/wandering-cubes.css';
-@import './css/wave.css';
 @import './css/wordpress.css';
 </style>

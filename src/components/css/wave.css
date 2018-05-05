@@ -1,12 +1,15 @@
 .sk-wave {
-  width: 30px;
-  height: 27px;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
 }
 
 .sk-wave > div {
   background-color: currentColor;
   height: 100%;
   width: 6px;
+  margin: 0 3px 0 0;
   display: inline-block;
 
   -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;

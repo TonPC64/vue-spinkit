@@ -9,7 +9,8 @@ const spinkitSpinners = {
   'chasing-dots': { className: 'sk-chasing-dots', divCount: 2 },
   'rotating-plane': { className: 'sk-rotating-plane', divCount: 1 },
   'pulse': { className: 'sk-pulse', divCount: 1 },
-  'wordpress': { className: 'sk-wordpress', divCount: 1 }
+  'wordpress': { className: 'sk-wordpress', divCount: 1 },
+  'fading-circle': { className: 'sk-fading-circle', divCount: 12 }
 }
 
 const loadersCssSpinners = {
