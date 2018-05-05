@@ -50,3 +50,5 @@ Vue.component('Spinner', Spinner)
 | noFadeIn | boolean | false | set use fade in |
 | fadeIn | string | 'full' | set the time before the spinner fades in. Have 'full', 'half' and 'quarter' |
 | className | string | | add a custom classname to the outer div |
+| width | string | | set width of spinner |
+| height | string | | set heght of spinner |
