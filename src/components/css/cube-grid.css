@@ -1,6 +1,6 @@
 .sk-cube-grid {
-  width: 27px;
-  height: 27px;
+  width: 40px;
+  height: 40px;
 }
 
 .sk-cube-grid > div {
@@ -37,5 +37,5 @@
 
 @keyframes sk-scaleDelay {
   0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(1.0, 1.0, 1.0) }
-  35%           { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(0.0, 0.0, 1.0) }
+  35%           { -webkit-transform:scale3D(0.0, 0.0, 1.0); transform:scale3D(0.0, 0.0, 1.0) }
 }

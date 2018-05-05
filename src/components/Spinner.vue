@@ -11,7 +11,7 @@
     'sk-spinner',
     loading.className
   ]"
-  :style="color !== ''? 'color: '+ color+ ';': ''">
+  :style="style">
     <div :key="index" v-for="(_, index) in loading.divCount"></div>
   </div>
 </template>
@@ -40,6 +40,14 @@ export default {
     className: {
       type: String,
       default: ''
+    },
+    width: {
+      type: String,
+      default: ''
+    },
+    height: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -62,6 +70,12 @@ export default {
           divCount: 0
         }
       }
+    },
+    style () {
+      let color = this.color !== '' ? 'color: ' + this.color + ';' : ''
+      let width = this.width !== '' ? 'width: ' + this.width + 'px;' : ''
+      let height = this.height !== '' ? 'height: ' + this.height + 'px;' : ''
+      return (color + width + height)
     }
   }
 }
@@ -69,7 +83,6 @@ export default {
 
 <style scoped>
 @import 'loaders.css';
-@import './css/loaders-css.css';
 @import './css/base.css';
 @import './css/fade-in.css';
 
@@ -85,4 +98,6 @@ export default {
 @import './css/fading-circle.css';
 @import './css/folding-cube.css';
 @import './css/wordpress.css';
+
+@import './css/loaders-css.css';
 </style>
