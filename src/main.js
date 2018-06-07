@@ -2,6 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Example from './Example'
+import VueGitHubCorners from 'vue-gh-corners'
+import 'vue-gh-corners/dist/vue-github-corners.css'
+
+Vue.use(VueGitHubCorners)
 
 Vue.config.productionTip = false
 

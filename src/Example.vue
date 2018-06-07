@@ -1,12 +1,15 @@
 <template>
   <div id="app">
+    <github-corners repo="TonPC64/vue-spinkit"></github-corners>
     <h1>Example Vue Spinkit</h1>
+    <a class="github-button" href="https://github.com/TonPC64/vue-spinkit" data-icon="octicon-star" data-show-count="true" aria-label="Star TonPC64/vue-spinkit on GitHub">Star</a>
+    <a class="github-button" href="https://github.com/TonPC64/vue-spinkit/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TonPC64/vue-spinkit on GitHub">Fork</a>
     <div :key="spinner.name" v-for="spinner in allSpinner">
       <h2>{{spinner.name}}</h2>
       <div class="columns">
         <div :key="spin" v-for="(spin, index) in spinner.spin" class="loading column">
           <span class="example-code" v-html="showExam(spin, color[index])"></span>
-          <Spinner :name="spin" :color="color[index]"/>
+          <Spinner :name="spin" :color="color[index]" />
         </div>
       </div>
     </div>
@@ -81,13 +84,13 @@ export default {
 }
 
 .columns {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: row;
-   flex-wrap: wrap;
-   flex-flow: row wrap;
-   align-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-content: flex-end;
 }
 .column {
   display: flex;
@@ -98,7 +101,7 @@ export default {
     width: 1024px;
   }
   .example-code {
-     width: 450px;
+    width: 450px;
   }
 }
 </style>
