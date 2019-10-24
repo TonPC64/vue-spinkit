@@ -58,7 +58,7 @@ export default {
   computed: {
     loading () {
       const allSpinners = this.allSpinners[this.name]
-      console.log(this.allSpinners)
+
       if (allSpinners !== undefined) {
         const className = allSpinners.className !== undefined ? allSpinners.className : this.name
         return {
