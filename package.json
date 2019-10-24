@@ -68,7 +68,7 @@
     "prismjs": "^1.14.0",
     "randomcolor": "^0.5.3",
     "rimraf": "^2.6.0",
-    "rollup-plugin-vue": "^3.0.0",
+    "rollup-plugin-vue": "^5.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
