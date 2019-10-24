@@ -50,3 +50,8 @@
 .pacman > div:nth-child(5) {
   background-color: currentColor;
 }
+
+.square-spin > div {
+  background: currentColor;
+  border-color: currentColor;
+}
