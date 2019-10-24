@@ -40,11 +40,26 @@ const loadersCssSpinners = {
   'triangle-skew-spin': { divCount: 1 }
 }
 
+const loadingIOSpinners = {
+  'circle-solid-spin': { className: 'sk-circle-solid-spin', divCount: 1 },
+  'dual-ring': { className: 'sk-dual-ring', divCount: 0 },
+  'facebook': { className: 'sk-facebook', divCount: 3 },
+  'heart': { className: 'sk-heart', divCount: 1 },
+  'ring': { className: 'sk-ring', divCount: 4 },
+  'roller': { className: 'sk-roller', divCount: 8 },
+  'ellipsis': { className: 'sk-ellipsis', divCount: 4 },
+  'grid': { className: 'sk-grid', divCount: 9 },
+  'hourglass': { className: 'sk-hourglass', divCount: 0 },
+  'ripple': { className: 'sk-ripple', divCount: 2 }
+}
+
 export default {
   spinkitSpinners,
   loadersCssSpinners,
+  loadingIOSpinners,
   allSpinners: {
     ...spinkitSpinners,
-    ...loadersCssSpinners
+    ...loadersCssSpinners,
+    ...loadingIOSpinners
   }
 }

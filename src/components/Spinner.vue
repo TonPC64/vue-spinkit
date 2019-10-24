@@ -58,6 +58,7 @@ export default {
   computed: {
     loading () {
       const allSpinners = this.allSpinners[this.name]
+
       if (allSpinners !== undefined) {
         const className = allSpinners.className !== undefined ? allSpinners.className : this.name
         return {
@@ -100,4 +101,15 @@ export default {
 @import './css/wordpress.css';
 
 @import './css/loaders-css.css';
+
+@import './css/circle-solid-spin.css';
+@import './css/dual-ring.css';
+@import './css/ellipsis.css';
+@import './css/facebook.css';
+@import './css/grid.css';
+@import './css/heart.css';
+@import './css/hourglass.css';
+@import './css/ring.css';
+@import './css/ripple.css';
+@import './css/roller.css';
 </style>
