@@ -1,14 +1,14 @@
 language: node_js
 node_js:
-  - "lts/*"
+  - 8
 cache:
   directories:
     - "node_modules"
 before_script:
-  - yarn
+  - npm install
 script: 
-  - yarn bundle
-  - yarn build
+  - npm run bundle
+  - npm run build
 deploy:
   - provider: surge
     project: ./dist/
