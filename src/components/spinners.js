@@ -14,6 +14,7 @@ const spinkitSpinners = {
 }
 
 const loadersCssSpinners = {
+  'square-spin': { divCount: 1 },
   'ball-grid-beat': { divCount: 9 },
   'ball-grid-pulse': { divCount: 9 },
   'line-spin-fade-loader': { divCount: 8 },
@@ -28,6 +29,7 @@ const loadersCssSpinners = {
   'ball-scale-multiple': { divCount: 3 },
   'ball-scale-ripple-multiple': { divCount: 3 },
   'ball-pulse-sync': { divCount: 3 },
+  'ball-pulse': { divCount: 3 },
   'ball-beat': { divCount: 3 },
   'ball-zig-zag': { divCount: 2 },
   'ball-zig-zag-deflect': { divCount: 2 },
