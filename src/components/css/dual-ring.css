@@ -11,8 +11,8 @@
   height: 46px;
   margin: 1px;
   border-radius: 50%;
-  border: 5px solid black;
-  border-color: black transparent black transparent;
+  border: 5px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
   animation: sk-dual-ring 1.2s linear infinite;
 }
 

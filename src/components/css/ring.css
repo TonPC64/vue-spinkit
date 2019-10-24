@@ -5,16 +5,17 @@
   height: 64px;
 }
 .sk-ring div {
+  background: transparent;
   box-sizing: border-box;
   display: block;
   position: absolute;
   width: 51px;
   height: 51px;
   margin: 6px;
-  border: 6px solid black;
+  border: 6px solid currentColor;
   border-radius: 50%;
   animation: sk-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: black transparent transparent transparent;
+  border-color: currentColor transparent transparent transparent;
 }
 .sk-ring div:nth-child(1) {
   animation-delay: -0.45s;

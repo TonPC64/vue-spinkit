@@ -12,7 +12,7 @@
   position: absolute;
   width: 26px;
   height: 26px;
-  background: black;
+  background: currentColor;
   animation: sk-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .sk-heart div:after,
@@ -22,7 +22,7 @@
   display: block;
   width: 26px;
   height: 26px;
-  background: black;
+  background: currentColor;
 }
 .sk-heart div:before {
   left: -17px;
