@@ -112,4 +112,10 @@ export default {
 @import './css/ring.css';
 @import './css/ripple.css';
 @import './css/roller.css';
+
+@import './css/clock.css';
+@import './css/hydrogen.css';
+@import './css/loadbar.css';
+@import './css/circle-fade.css';
+@import './css/moon.css';
 </style>

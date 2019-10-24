@@ -53,13 +53,23 @@ const loadingIOSpinners = {
   'ripple': { className: 'sk-ripple', divCount: 2 }
 }
 
+const awesomeSpinners = {
+  'loadbar': { className: 'sk-loadbar', divCount: 0 },
+  'hydrogen': { className: 'sk-hydrogen', divCount: 0 },
+  'clock': { className: 'sk-clock', divCount: 0 },
+  'circle-fade': { className: 'sk-circle-fade', divCount: 0 },
+  'moon': { className: 'sk-moon', divCount: 1 }
+}
+
 export default {
   spinkitSpinners,
   loadersCssSpinners,
   loadingIOSpinners,
+  awesomeSpinners,
   allSpinners: {
     ...spinkitSpinners,
     ...loadersCssSpinners,
-    ...loadingIOSpinners
+    ...loadingIOSpinners,
+    ...awesomeSpinners
   }
 }
