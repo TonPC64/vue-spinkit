@@ -1,0 +1,19 @@
+.sk-loadbar {
+	width: 50px;
+	height: 18px;
+	border: 1px currentColor solid;
+	border-radius: 4px;
+	background: linear-gradient(-60deg, transparent 0%, transparent 50%, currentColor 50%, currentColor 75%, transparent 75%, transparent);
+	background-size: 20px 30px;
+	background-position: 0px 0px;
+	-webkit-animation: skLoadBar 0.8s infinite linear;
+	animation: skLoadBar 0.8s infinite linear;
+}
+@-webkit-keyframes skLoadBar {
+	from { background-position: 0px 0px; }
+	to { background-position: -20px 0px; }
+}
+@keyframes skLoadBar {
+	from { background-position: 0px 0px; }
+	to { background-position: -20px 0px; }
+}

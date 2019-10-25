@@ -1,0 +1,30 @@
+.sk-clock {
+	border: 1px currentColor solid;
+	border-radius: 50%;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+.sk-clock:before {
+	content:'';
+	border-left: 1px currentColor solid;
+	position: absolute;
+	top: 2px;
+	width: 1px;
+	height: calc( 50% - 2px );
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+    -ms-transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+	-webkit-animation: skClock 1s infinite linear;
+	animation: skClock 1s infinite linear;
+}
+@-webkit-keyframes skClock {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(359deg); }
+}
+@keyframes skClock {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
