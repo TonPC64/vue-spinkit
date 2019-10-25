@@ -38,6 +38,10 @@ export default {
         {
           name: 'Loaders.css',
           spin: Object.keys(spinners.loadersCssSpinners)
+        },
+        {
+          name: 'Loading.io',
+          spin: Object.keys(spinners.loadingIOSpinners)
         }
       ],
       color: randomColor({
