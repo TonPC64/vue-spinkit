@@ -74,7 +74,7 @@
   top: 45px;
   left: 10px;
 }
-@keyframes lds-roller {
+@keyframes sk-roller {
   0% {
     transform: rotate(0deg);
   }
