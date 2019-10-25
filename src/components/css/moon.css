@@ -1,0 +1,86 @@
+.sk-moon {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	margin:0px auto;
+}
+
+.sk-moon > div {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	background-color: transparent;
+	box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	box-shadow: 0 0 8px 1px currentColor;
+		-o-box-shadow: 0 0 8px 1px currentColor;
+		-ms-box-shadow: 0 0 8px 1px currentColor;
+		-webkit-box-shadow: 0 0 8px 1px currentColor;
+    -moz-box-shadow: 0 0 8px 1px currentColor;
+    border-bottom: 10px solid currentColor;
+	border-radius: 50%;
+		-o-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+	animation: spin 1.15s ease infinite;
+		-o-animation: spin 1.15s ease infinite;
+		-ms-animation: spin 1.15s ease infinite;
+		-webkit-animation: spin 1.15s ease infinite;
+		-moz-animation: spin 1.15s ease infinite;
+}
+
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes spin {
+	from {
+		-o-transform: rotate(0deg);
+	}
+	to {
+		-o-transform: rotate(360deg);
+	}
+}
+
+@-ms-keyframes spin {
+	from {
+		-ms-transform: rotate(0deg);
+	}
+	to {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		-moz-transform: rotate(360deg);
+	}
+}

@@ -42,6 +42,11 @@ export default {
         {
           name: 'Loading.io',
           spin: Object.keys(spinners.loadingIOSpinners)
+        },
+        {
+          // https://github.com/yangshun/awesome-spinners
+          name: 'Awesome Spinners',
+          spin: Object.keys(spinners.awesomeSpinners)
         }
       ],
       color: randomColor({

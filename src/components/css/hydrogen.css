@@ -1,0 +1,33 @@
+.sk-hydrogen {
+	position: relative;
+	border: 1px currentColor solid;
+	border-radius: 50%;
+	-webkit-animation: skHydro 0.6s infinite linear;
+  animation: skHydro 0.6s infinite linear;
+  height: 30px;
+  width: 30px;
+}
+.sk-hydrogen:before, .sk-hydrogen:after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: currentColor;
+	border-radius: 50%;
+}
+.sk-hydrogen:before {
+	top: calc( 50% - 5px );
+	left: calc( 50% - 5px );
+}
+.sk-hydrogen:after {
+	top: -1px;
+	left: -1px;
+}
+@-webkit-keyframes skHydro {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(359deg); }
+}
+@keyframes skHydro {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
