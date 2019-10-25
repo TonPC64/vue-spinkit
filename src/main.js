@@ -3,11 +3,10 @@
 import Vue from 'vue'
 import Example from './Example'
 import VueGitHubCorners from 'vue-gh-corners'
-import 'vue-gh-corners/dist/vue-github-corners.css'
+
+import 'vue-gh-corners/dist/vue-github-corners.iife.css'
 
 Vue.use(VueGitHubCorners)
-
-Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
