@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <github-corners repo="TonPC64/vue-spinkit"></github-corners>
     <h1>Example Vue Spinkit</h1>
     <a class="github-button" href="https://github.com/TonPC64/vue-spinkit" data-icon="octicon-star" data-show-count="true" aria-label="Star TonPC64/vue-spinkit on GitHub">Star</a>
     <a class="github-button" href="https://github.com/TonPC64/vue-spinkit/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TonPC64/vue-spinkit on GitHub">Fork</a>
@@ -17,8 +16,8 @@
 </template>
 
 <script>
-import Spinner from './components/Spinner'
-import spinners from './components/spinners'
+import Spinner from './components/Spinner.vue'
+import spinners from './components/spinners.js'
 import randomColor from 'randomcolor'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
