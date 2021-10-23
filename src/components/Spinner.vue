@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style scoped>
-@import 'loaders.css';
+/* @import 'loaders.css'; */
 @import './css/base.css';
 @import './css/fade-in.css';
 
@@ -100,6 +100,7 @@ export default {
 @import './css/folding-cube.css';
 @import './css/wordpress.css';
 
+@import './css/loaders.css';
 @import './css/loaders-css.css';
 
 @import './css/circle-solid-spin.css';
