@@ -1,17 +1,17 @@
 {
   "name": "vue-spinkit",
-  "version": "1.7.12",
+  "version": "2.0.0",
   "description": "A collection of loading indicators animated with CSS for VueJS",
   "author": "Chanwit Piromplad <kingkong2103@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "bundle": "vue-cli-service build",
+    "bundle": "vue-cli-service build --target=lib --filename=vue-spinkit --dest=build --formats=commonjs src/components/Spinner.vue",
     "lint": "vue-cli-service lint"
   },
-  "main": "public/vue-spinkit.min.js",
+  "main": "build/vue-spinkit.common.js",
   "files": [
-    "public"
+    "build"
   ],
   "repository": {
     "type": "git",
