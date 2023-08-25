@@ -1,3 +1,7 @@
+# Attention
+
+> This is a fork of vue-spinkit that works in vuejs 3
+
 # vue-spinkit
 
 > A collection of loading indicators animated with CSS for VueJS
