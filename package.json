@@ -1,5 +1,5 @@
 {
-  "name": "vue3-spinkit",
+  "name": "@ventralnet/vue3-spinkit",
   "version": "1.0.0",
   "description": "A collection of loading indicators animated with CSS for VueJS. Forked for Vue3",
   "author": "Chanwit Piromplad <kingkong2103@gmail.com>",
