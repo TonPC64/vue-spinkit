@@ -1,6 +1,10 @@
 # Attention
 
-> This is a fork of vue-spinkit that works in vuejs 3
+> This is a fork of vue-spinkit that works in vuejs 3. All other documentation should be accurate HOWEVER install this version
+
+```
+npm install --save @ventralnet/vue3-spinkit
+```
 
 # vue-spinkit
 
@@ -27,17 +31,16 @@
 
 ```bash
 # use yarn
-yarn add vue-spinkit
+yarn add @ventralnet/vue3-spinkit
 # use npm
-npm install --save vue-spinkit
+npm install --save @ventralnet/vue3-spinkit
 ```
 
 ## How to use
 ```js
-import Vue from 'vue'
-import Spinner from 'vue-spinkit'
+import Spinner from '@ventralnet/vue3-spinkit'
 
-Vue.component('Spinner', Spinner)
+// Register as a component in your component
 ```
 
 ## In file vue
