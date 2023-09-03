@@ -1,3 +1,9 @@
+# Attention
+
+```
+npm install --save vue-spinkit
+```
+
 # vue-spinkit
 
 > A collection of loading indicators animated with CSS for VueJS
@@ -30,10 +36,9 @@ npm install --save vue-spinkit
 
 ## How to use
 ```js
-import Vue from 'vue'
-import Spinner from 'vue-spinkit'
+import Spinner from '@ventralnet/vue3-spinkit'
 
-Vue.component('Spinner', Spinner)
+// Register as a component in your component
 ```
 
 ## In file vue
