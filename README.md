@@ -1,9 +1,7 @@
 # Attention
 
-> This is a fork of vue-spinkit that works in vuejs 3. All other documentation should be accurate HOWEVER install this version
-
 ```
-npm install --save @ventralnet/vue3-spinkit
+npm install --save vue-spinkit
 ```
 
 # vue-spinkit
@@ -31,9 +29,9 @@ npm install --save @ventralnet/vue3-spinkit
 
 ```bash
 # use yarn
-yarn add @ventralnet/vue3-spinkit
+yarn add vue-spinkit
 # use npm
-npm install --save @ventralnet/vue3-spinkit
+npm install --save vue-spinkit
 ```
 
 ## How to use

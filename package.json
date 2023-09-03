@@ -1,6 +1,6 @@
 {
-  "name": "@ventralnet/vue3-spinkit",
-  "version": "1.0.0",
+  "name": "vue-spinkit",
+  "version": "2.0.0",
   "description": "A collection of loading indicators animated with CSS for VueJS. Forked for Vue3",
   "author": "Chanwit Piromplad <kingkong2103@gmail.com>",
   "scripts": {
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ventralnet/vue3-spinkit.git"
+    "url": "https://github.com/TonPC64/vue-spinkit.git"
   },
   "homepage": "http://vue-spinkit.surge.sh",
   "keywords": [
