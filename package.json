@@ -33,7 +33,7 @@
     "@vue/cli-plugin-babel": "^4.5.14",
     "prismjs": "^1.25.0",
     "randomcolor": "^0.6.2",
-    "vite": "^5.4.20",
+    "vite": "^4.5.5",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "^2.7.16",
     "vue-template-compiler": "^2.7.16"
