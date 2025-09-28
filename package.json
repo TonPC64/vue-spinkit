@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "bundle": "vite build --config vite.config.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "node test/smoke.js"
   },
   "main": "build/vue-spinkit.common.js",
   "files": [
@@ -26,8 +27,9 @@
     "vue-loading"
   ],
   "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/eslint-parser": "^7.23.6",
     "@babel/preset-env": "^7.23.6",
-    "babel-eslint": "^10.1.0",
     "core-js": "^3.18.3",
     "eslint": "^8.57.1",
     "eslint-plugin-vue": "^9.33.0",
@@ -56,20 +58,6 @@
     "postcss": "8.4.31",
     "tough-cookie": "4.1.4",
     "semver": "7.5.4"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
   },
   "browserslist": [
     "> 1%",
