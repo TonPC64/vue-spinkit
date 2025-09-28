@@ -19,76 +19,117 @@
 ![](./static/example3.gif)
 ![](./static/example4.gif)
 
-## Installation
+# vue-spinkit
+
+A collection of CSS-based loading indicators for Vue.
+
+Badges
+
+[![NPM Package](https://img.shields.io/npm/v/vue-spinkit.svg)](https://www.npmjs.com/package/vue-spinkit)  [![Build Status](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml/badge.svg)](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml)
+
+Demo
+
+Live demo: http://vue-spinkit.surge.sh/
+
+Why this README is different
+---------------------------------
+This package is shipped so the styles are injected at runtime from the JS bundle. That means you no longer need to (and shouldn't) import a separate `style.css` file — simply import the package entry and the required CSS is automatically inserted into the page when running in a browser.
+
+This README explains how to use vue-spinkit without a separate CSS import and covers common usage patterns and troubleshooting notes.
+
+Installation
+------------
 
 ```bash
-# use yarn
-yarn add vue-spinkit
-# use npm
+# using npm
 npm install --save vue-spinkit
+# or yarn
+yarn add vue-spinkit
 ```
 
-## How to use
+Quick usage (bundlers — recommended)
+-----------------------------------
 
-### Import Component and Styles
+If you're using a bundler (Vite, Webpack, Rollup, etc.), import the package root. The library entry injects the CSS at runtime, so you do not need to import any CSS file.
 
 ```js
 import Vue from 'vue'
 import Spinner from 'vue-spinkit'
-import 'vue-spinkit/build/style.css' // Import the CSS styles
 
+// Register globally
 Vue.component('Spinner', Spinner)
+
+// or locally in a component
+export default {
+  components: { Spinner }
+}
 ```
 
-### Alternative: Auto-import CSS (Vite/Webpack)
+Notes:
+- Always import from the package root (e.g. `import Spinner from 'vue-spinkit'`). Importing component files directly (for example `vue-spinkit/src/components/Spinner.vue`) may bypass the CSS-injection entry and you'll see unstyled output.
 
-Some bundlers can automatically include CSS from the package.json `style` field:
+Browser (UMD) usage
+--------------------
 
-```js
-import Vue from 'vue'
-import Spinner from 'vue-spinkit'
-// CSS is automatically imported
-
-Vue.component('Spinner', Spinner)
-```
-
-### Use in Vue Template
+You can also use the prebuilt UMD bundle in a plain HTML page. The UMD bundle includes the runtime style injection.
 
 ```html
-<Spinner name="circle" color="red"/>
+<!-- Vue must be present -->
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<!-- UMD build served from the package (or your CDN)
+     change path to where your build is served -->
+<script src="https://unpkg.com/vue-spinkit/dist/vue-spinkit.common.js"></script>
+<script>
+  // The library exposes `VueSpinkit` as the global name (UMD). Use the exported Spinner.
+  const Spinner = window.VueSpinkit && (window.VueSpinkit.Spinner || window.VueSpinkit.default)
+  Vue.component('Spinner', Spinner)
+  new Vue({ el: '#app' })
+</script>
 ```
 
-## Bundle Size Optimization
+Use in templates
+---------------
 
-Vue-spinkit has been optimized for minimal bundle size:
+```html
+<Spinner name="circle" color="#e74c3c" />
+```
 
-* **Core build** (default): Only includes the most popular spinners (~5KB total)
-  * Includes: three-bounce (default), pulse, circle, wave, rotating-plane
-  * **98% smaller** CSS bundle (0.96KB vs 49KB)
+Server-side rendering (SSR)
+--------------------------
 
-* **Full build**: All spinners included (~55KB total)
+The library injects styles on the client side only (it checks for `document` before injecting). That means:
+- On SSR the server HTML won't include the styles. When the page is hydrated in the browser the library will insert the CSS into the page head.
+- If you need server-rendered inline-critical styles, you should extract the CSS at build time (not covered here) or control injection manually by adding an explicit export (advanced).
 
-  ```bash
-  npm run build:full  # Build full version with all spinners
-  ```
+Troubleshooting
+---------------
 
-### Bundle Sizes
+- If spinners look unstyled, make sure you imported from the package root: `import Spinner from 'vue-spinkit'`.
+- If you still see a separate `style.css` in your build output, check for any components or demo files that import CSS without `?raw` or any SFC `<style>` blocks that pull in CSS. The library is configured to avoid emitting a separate CSS file when built from the entrypoint.
 
-| Build | JS Size | CSS Size | Total | Spinners |
-|-------|---------|----------|-------|----------|
-| Core (default) | 4.2KB | 0.96KB | **~5KB** | 5 popular |
-| Full | 4.2KB | 49KB | ~53KB | All 50+ |
+Build notes (for maintainers)
+----------------------------
 
-The core build includes the most commonly used spinners. If you need additional spinners, use the full build or import specific CSS files.
+- Building locally produces a single JS bundle (UMD) that contains both code and CSS injection. Run:
 
-## Props
+```bash
+npm run build
+```
 
-| Name | Type | Default | Description |
-|:-----|:-----|:--------|:------------|
-| name | string | 'three-bounce' | specify spinner to use (defaults to line-scale-pulse-out-rapid). |
-| color | string |  | programmatically set the color of the spinners; this can either be a hex value or a color word. |
-| noFadeIn | boolean | false | set use fade in |
-| fadeIn | string | 'full' | set the time before the spinner fades in. Have 'full', 'half' and 'quarter' |
-| className | string | | add a custom classname to the outer div |
-| width | string | | set width of spinner |
-| height | string | | set heght of spinner |
+- The CI workflow uses a smoke test to verify the built bundle loads — the test no longer requires a separate CSS file because styles are injected by the JS bundle.
+
+Props
+-----
+
+The Spinner component accepts the following props (short):
+
+- `name` (string) — which spinner to render (default: `three-bounce`).
+- `color` (string) — color value (hex, rgb, or named color).
+- `noFadeIn` (boolean) — disable fade-in.
+- `fadeIn` (string) — fade-in timing: `full`, `half`, `quarter`.
+- `className`, `width`, `height` — extra class and sizing.
+
+License
+-------
+
+MIT
