@@ -4,10 +4,12 @@
   "description": "A collection of loading indicators animated with CSS for VueJS",
   "author": "Chanwit Piromplad <kingkong2103@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "bundle": "vue-cli-service build --target=lib --filename=vue-spinkit --dest=build --formats=commonjs src/components/Spinner.vue",
-    "lint": "vue-cli-service lint"
+    "serve": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "bundle": "vite build --config vite.config.js",
+    "lint": "eslint --ext .js,.vue src",
+    "test": "node test/smoke.js"
   },
   "main": "build/vue-spinkit.common.js",
   "files": [
@@ -25,31 +27,37 @@
     "vue-loading"
   ],
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.14",
-    "@vue/cli-plugin-eslint": "^4.5.14",
-    "@vue/cli-service": "^4.5.14",
-    "babel-eslint": "^10.1.0",
+    "@babel/core": "^7.23.6",
+    "@babel/eslint-parser": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
     "core-js": "^3.18.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.20.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.33.0",
     "prismjs": "^1.25.0",
     "randomcolor": "^0.6.2",
-    "vue": "^2.6.14",
-    "vue-template-compiler": "^2.6.11"
+    "vite": "^4.5.5",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue": "^2.7.16",
+    "vue-template-compiler": "^2.7.16"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+  "engines": {
+    "node": ">=16"
+  },
+  "overrides": {
+    "form-data": "2.5.4",
+    "node-forge": "1.3.1",
+    "webpack-bundle-analyzer": "4.6.0",
+    "loader-utils": "1.4.2",
+    "json5": "1.0.2",
+    "html-minifier": "4.0.0",
+    "ip": "2.0.1",
+    "nth-check": "2.1.1",
+    "webpack-dev-middleware": "7.4.2",
+    "braces": "3.0.3",
+    "micromatch": "4.0.8",
+    "postcss": "8.4.31",
+    "tough-cookie": "4.1.4",
+    "semver": "7.5.4"
   },
   "browserslist": [
     "> 1%",
