@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vite",
     "dev": "vite",
-    "build": "vite build",
+  "build": "vite build",
     "lint": "eslint --ext .js,.vue src",
     "test": "node test/smoke.js"
   },
