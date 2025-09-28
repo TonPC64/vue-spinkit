@@ -1,19 +1,16 @@
 {
   "name": "vue-spinkit",
-  "version": "2.1.1-dev.2",
+  "version": "2.1.1-dev.1",
   "description": "A collection of loading indicators animated with CSS for VueJS",
   "author": "Chanwit Piromplad <kingkong2103@gmail.com>",
   "scripts": {
     "serve": "vite",
     "dev": "vite",
     "build": "vite build",
-    "build:full": "node scripts/build-full.js",
-    "bundle": "vite build --config vite.config.js",
     "lint": "eslint --ext .js,.vue src",
     "test": "node test/smoke.js"
   },
   "main": "build/vue-spinkit.common.js",
-  "style": "build/style.css",
   "files": [
     "build"
   ],
@@ -40,8 +37,10 @@
     "postcss-nested": "^7.0.2",
     "prismjs": "^1.25.0",
     "randomcolor": "^0.6.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "terser": "^5.44.0",
     "vite": "^4.5.5",
+    "vite-plugin-css-injected-by-js": "^3.0.0",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "^2.7.16",
     "vue-template-compiler": "^2.7.16"
