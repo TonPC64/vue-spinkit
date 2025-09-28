@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-000000.svg)](https://img.shields.io/badge/license-MIT-000000.svg)
 [![NPM Package](https://img.shields.io/npm/v/vue-spinkit.svg)](https://www.npmjs.com/package/vue-spinkit)
 [![NPM Downloads](https://img.shields.io/npm/dm/vue-spinkit.svg)](https://npmjs.org/package/vue-spinkit)
-[![Build Status](https://app.travis-ci.com/TonPC64/vue-spinkit.svg?branch=master)](https://app.travis-ci.com/TonPC64/vue-spinkit)
+[![Build Status](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml/badge.svg)](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml)
 
 ## Inspiration
 * [Spinkit](http://tobiasahlin.com/spinkit/) css animated loading
