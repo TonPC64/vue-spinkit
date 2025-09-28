@@ -13,6 +13,7 @@
     "test": "node test/smoke.js"
   },
   "main": "build/vue-spinkit.common.js",
+  "style": "build/style.css",
   "files": [
     "build"
   ],

@@ -82,7 +82,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 /* @import 'loaders.css'; */
 @import './css/base.css';
 @import './css/fade-in.css';

@@ -29,14 +29,31 @@ npm install --save vue-spinkit
 ```
 
 ## How to use
+
+### Import Component and Styles
+
 ```js
 import Vue from 'vue'
 import Spinner from 'vue-spinkit'
+import 'vue-spinkit/build/style.css' // Import the CSS styles
 
 Vue.component('Spinner', Spinner)
 ```
 
-## In file vue
+### Alternative: Auto-import CSS (Vite/Webpack)
+
+Some bundlers can automatically include CSS from the package.json `style` field:
+
+```js
+import Vue from 'vue'
+import Spinner from 'vue-spinkit'
+// CSS is automatically imported
+
+Vue.component('Spinner', Spinner)
+```
+
+### Use in Vue Template
+
 ```html
 <Spinner name="circle" color="red"/>
 ```
