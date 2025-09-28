@@ -41,6 +41,29 @@ Vue.component('Spinner', Spinner)
 <Spinner name="circle" color="red"/>
 ```
 
+## Bundle Size Optimization
+
+Vue-spinkit has been optimized for minimal bundle size:
+
+* **Core build** (default): Only includes the most popular spinners (~5KB total)
+  * Includes: three-bounce (default), pulse, circle, wave, rotating-plane
+  * **98% smaller** CSS bundle (0.96KB vs 49KB)
+
+* **Full build**: All spinners included (~55KB total)
+
+  ```bash
+  npm run build:full  # Build full version with all spinners
+  ```
+
+### Bundle Sizes
+
+| Build | JS Size | CSS Size | Total | Spinners |
+|-------|---------|----------|-------|----------|
+| Core (default) | 4.2KB | 0.96KB | **~5KB** | 5 popular |
+| Full | 4.2KB | 49KB | ~53KB | All 50+ |
+
+The core build includes the most commonly used spinners. If you need additional spinners, use the full build or import specific CSS files.
+
 ## Props
 
 | Name | Type | Default | Description |
