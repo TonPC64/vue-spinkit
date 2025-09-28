@@ -7,7 +7,8 @@
     "serve": "vite",
     "dev": "vite",
     "build": "vite build",
-    "bundle": "node scripts/check-build.js",
+    "build:example": "vite build --config vite.example.config.js",
+    "deploy:surge": "surge dist vue-spinkit.surge.sh",
     "lint": "eslint --ext .js,.vue src",
     "test": "node test/smoke.js"
   },
