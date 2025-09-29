@@ -40,6 +40,14 @@ jobs:
             echo "Version unchanged; skipping npm publish"
             exit 0
           fi
+      - name: Pre-publish diagnostics
+        run: |
+          echo "npm whoami:"
+          npm whoami || true
+          echo "npm view package info (if exists):"
+          npm view $(node -p "require('./package.json').name") || true
+          echo "npm pack dry-run to inspect tarball contents:"
+          npm pack --dry-run
       - name: Configure npm auth and publish
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
