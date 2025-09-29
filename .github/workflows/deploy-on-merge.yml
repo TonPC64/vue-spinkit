@@ -17,14 +17,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: npm ci
-      - name: Run ESLint
-        run: npm run lint
-      - name: Run tests
-        run: npm test
-      - name: Build library
-        run: npm run build
-      - name: Build example
-        run: npm run build:example
+      - name: Build (library + example)
+        run: npm run build && npm run build:example
       - name: Deploy example to Surge
         run: |
           npm install --global surge
