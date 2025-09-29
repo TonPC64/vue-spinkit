@@ -13,7 +13,7 @@
 * [react-spinkit](https://github.com/KyleAMathews/react-spinkit)
 * [loaders.css](https://connoratherton.com/loaders)
 
-## [DEMO](http://vue-spinkit.surge.sh/)
+## [DEMO](https://tonpc64.github.io/vue-spinkit/)
 ![](./static/example1.gif)
 ![](./static/example2.gif)
 ![](./static/example3.gif)
@@ -29,7 +29,7 @@ Badges
 
 Demo
 
-Live demo: http://vue-spinkit.surge.sh/
+Live demo: https://tonpc64.github.io/vue-spinkit/
 
 Why this README is different
 ---------------------------------
