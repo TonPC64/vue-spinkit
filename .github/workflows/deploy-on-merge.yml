@@ -35,7 +35,7 @@ jobs:
         run: npm run build
 
       - name: Build example
-        run: npm run build:example
+        run: npm run build:example -- --base=/vue-spinkit/
 
       - name: Run smoke tests
         run: npm test
