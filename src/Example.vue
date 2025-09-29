@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <h1>Example Vue Spinkit</h1>
-    <a class="github-button" href="https://github.com/TonPC64/vue-spinkit" data-icon="octicon-star" data-show-count="true" aria-label="Star TonPC64/vue-spinkit on GitHub">Star</a>
-    <a class="github-button" href="https://github.com/TonPC64/vue-spinkit/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TonPC64/vue-spinkit on GitHub">Fork</a>
+    <div class="top-row">
+      <h1>Example Vue Spinkit</h1>
+      <div class="github-buttons-container">
+        <!-- Star button -->
+        <a class="github-button" href="https://github.com/TonPC64/vue-spinkit" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star TonPC64/vue-spinkit on GitHub">Star</a>
+        <!-- Fork button -->
+        <a class="github-button" href="https://github.com/TonPC64/vue-spinkit/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TonPC64/vue-spinkit on GitHub">Fork</a>
+      </div>
+    </div>
+
     <div :key="spinner.name" v-for="spinner in allSpinner">
       <h2>{{spinner.name}}</h2>
       <div class="columns">
@@ -51,6 +58,17 @@ export default {
       color: randomColor({
         count: Object.keys(spinners.allSpinners).length
       })
+    }
+  },
+  beforeMount () {
+    // load GitHub buttons script if not already loaded
+    if (!document.getElementById('github-btn-script')) {
+      const s = document.createElement('script')
+      s.id = 'github-btn-script'
+      s.async = true
+      s.defer = true
+      s.src = 'https://buttons.github.io/buttons.js'
+      document.body.appendChild(s)
     }
   },
   methods: {
@@ -111,5 +129,12 @@ export default {
   .example-code {
     width: 450px;
   }
+}
+.github-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
 }
 </style>
