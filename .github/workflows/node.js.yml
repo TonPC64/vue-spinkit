@@ -26,13 +26,91 @@ jobs:
       run: npm ci
     - name: Run ESLint
       run: npm run lint
-    - name: Build library
-      run: npm run build 
     - name: Run smoke test
       run: npm test
-    - name: Upload build artifacts
+    - name: Build library
+      run: npm run build 
+    - name: Build example (for deploy)
+      run: npm run build:example
+    - name: Upload library build artifact
       uses: actions/upload-artifact@v4
-      if: matrix.node-version == '20.x'
+      if: matrix.node-version == '22.x'
       with:
         name: build-artifacts
         path: build/
+    - name: Upload example build artifact
+      uses: actions/upload-artifact@v4
+      if: matrix.node-version == '22.x'
+      with:
+        name: example-dist
+        path: dist/
+
+  deploy-surge:
+    # only run deploy when this workflow was triggered by a push to master
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download example artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: example-dist
+          path: ./example-dist
+      - name: Install surge CLI
+        run: npm install --global surge
+      - name: Deploy example to Surge
+        run: |
+          # load secrets into shell variables
+          SURGE_TOKEN="${{ secrets.SURGE_TOKEN }}"
+          SURGE_DOMAIN="vue-spinkit.surge.sh"
+
+          # deploy the downloaded dist folder
+          surge ./example-dist/dist "$SURGE_DOMAIN" --token "$SURGE_TOKEN"
+
+  deploy-npm:
+    # publish library to npm on push to master
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download library build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./build-artifacts
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Restore build folder
+        run: |
+          if [ -d ./build-artifacts/build ]; then
+            rm -rf ./build || true
+            mv ./build-artifacts/build ./build
+          else
+            echo "build folder not found in artifact" && exit 1
+          fi
+      - name: Skip publish if version unchanged on npm
+        run: |
+          # compare local package.json version with npm registry
+          PKG_NAME=$(node -p "require('./package.json').name")
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "Package: $PKG_NAME, Local version: $LOCAL_VERSION"
+          REMOTE_VERSION=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
+          if [ -n "$REMOTE_VERSION" ]; then
+            echo "Remote version: $REMOTE_VERSION"
+          else
+            echo "Remote version: not found"
+          fi
+          if [ "$REMOTE_VERSION" = "$LOCAL_VERSION" ]; then
+            echo "Version unchanged; skipping npm publish"
+            exit 0
+          fi
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - name: Publish to npm
+        run: |
+          # publish package (package.json includes files: ["build"])
+          npm publish --access public
