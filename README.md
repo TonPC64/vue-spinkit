@@ -9,33 +9,17 @@
 [![Build Status](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml/badge.svg)](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml)
 
 ## Inspiration
+
 * [Spinkit](http://tobiasahlin.com/spinkit/) css animated loading
 * [react-spinkit](https://github.com/KyleAMathews/react-spinkit)
 * [loaders.css](https://connoratherton.com/loaders)
 
 ## [DEMO](https://tonpc64.github.io/vue-spinkit/)
+
 ![](./static/example1.gif)
 ![](./static/example2.gif)
 ![](./static/example3.gif)
 ![](./static/example4.gif)
-
-# vue-spinkit
-
-A collection of CSS-based loading indicators for Vue.
-
-Badges
-
-[![NPM Package](https://img.shields.io/npm/v/vue-spinkit.svg)](https://www.npmjs.com/package/vue-spinkit)  [![Build Status](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml/badge.svg)](https://github.com/TonPC64/vue-spinkit/actions/workflows/node.js.yml)
-
-Demo
-
-Live demo: https://tonpc64.github.io/vue-spinkit/
-
-Why this README is different
----------------------------------
-This package is shipped so the styles are injected at runtime from the JS bundle. That means you no longer need to (and shouldn't) import a separate `style.css` file — simply import the package entry and the required CSS is automatically inserted into the page when running in a browser.
-
-This README explains how to use vue-spinkit without a separate CSS import and covers common usage patterns and troubleshooting notes.
 
 Installation
 ------------
@@ -66,7 +50,8 @@ export default {
 ```
 
 Notes:
-- Always import from the package root (e.g. `import Spinner from 'vue-spinkit'`). Importing component files directly (for example `vue-spinkit/src/components/Spinner.vue`) may bypass the CSS-injection entry and you'll see unstyled output.
+
+* Always import from the package root (e.g. `import Spinner from 'vue-spinkit'`). Importing component files directly (for example `vue-spinkit/src/components/Spinner.vue`) may bypass the CSS-injection entry and you'll see unstyled output.
 
 Browser (UMD) usage
 --------------------
@@ -94,40 +79,45 @@ Use in templates
 <Spinner name="circle" color="#e74c3c" />
 ```
 
+Props
+-----
+
+The Spinner component accepts the following props:
+
+| Prop        | Type             | Description                                | Default        |
+| ----------- | ---------------- | ------------------------------------------ | -------------- |
+| `name`      | string           | Which spinner to render.                   | `three-bounce` |
+| `color`     | string           | Color value (hex, rgb, or named color).    | —              |
+| `noFadeIn`  | boolean          | Disable fade-in.                           | —              |
+| `fadeIn`    | string           | Fade-in timing: `full`, `half`, `quarter`. | —              |
+| `className` | string           | Extra CSS class applied to the spinner.    | —              |
+| `width`     | string \| number | Spinner width (e.g. `40px` or `40`).       | —              |
+| `height`    | string \| number | Spinner height (e.g. `40px` or `40`).      | —              |
+
 Server-side rendering (SSR)
 --------------------------
 
 The library injects styles on the client side only (it checks for `document` before injecting). That means:
-- On SSR the server HTML won't include the styles. When the page is hydrated in the browser the library will insert the CSS into the page head.
-- If you need server-rendered inline-critical styles, you should extract the CSS at build time (not covered here) or control injection manually by adding an explicit export (advanced).
+
+* On SSR the server HTML won't include the styles. When the page is hydrated in the browser the library will insert the CSS into the page head.
+* If you need server-rendered inline-critical styles, you should extract the CSS at build time (not covered here) or control injection manually by adding an explicit export (advanced).
 
 Troubleshooting
 ---------------
 
-- If spinners look unstyled, make sure you imported from the package root: `import Spinner from 'vue-spinkit'`.
-- If you still see a separate `style.css` in your build output, check for any components or demo files that import CSS without `?raw` or any SFC `<style>` blocks that pull in CSS. The library is configured to avoid emitting a separate CSS file when built from the entrypoint.
+* If spinners look unstyled, make sure you imported from the package root: `import Spinner from 'vue-spinkit'`.
+* If you still see a separate `style.css` in your build output, check for any components or demo files that import CSS without `?raw` or any SFC `<style>` blocks that pull in CSS. The library is configured to avoid emitting a separate CSS file when built from the entrypoint.
 
 Build notes (for maintainers)
 ----------------------------
 
-- Building locally produces a single JS bundle (UMD) that contains both code and CSS injection. Run:
+* Building locally produces a single JS bundle (UMD) that contains both code and CSS injection. Run:
 
 ```bash
 npm run build
 ```
 
-- The CI workflow uses a smoke test to verify the built bundle loads — the test no longer requires a separate CSS file because styles are injected by the JS bundle.
-
-Props
------
-
-The Spinner component accepts the following props (short):
-
-- `name` (string) — which spinner to render (default: `three-bounce`).
-- `color` (string) — color value (hex, rgb, or named color).
-- `noFadeIn` (boolean) — disable fade-in.
-- `fadeIn` (string) — fade-in timing: `full`, `half`, `quarter`.
-- `className`, `width`, `height` — extra class and sizing.
+* The CI workflow uses a smoke test to verify the built bundle loads — the test no longer requires a separate CSS file because styles are injected by the JS bundle.
 
 License
 -------
