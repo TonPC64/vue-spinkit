@@ -1,0 +1,52 @@
+name: Deploy on PR merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
+      - name: Run tests
+        run: npm test
+      - name: Build library
+        run: npm run build
+      - name: Build example
+        run: npm run build:example
+      - name: Deploy example to Surge
+        run: |
+          npm install --global surge
+          SURGE_TOKEN="${{ secrets.SURGE_TOKEN }}"
+          SURGE_DOMAIN="vue-spinkit.surge.sh"
+          surge ./dist "$SURGE_DOMAIN" --token "$SURGE_TOKEN"
+      - name: Skip npm publish if version unchanged on npm
+        run: |
+          PKG_NAME=$(node -p "require('./package.json').name")
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "Package: $PKG_NAME, Local version: $LOCAL_VERSION"
+          REMOTE_VERSION=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
+          if [ -n "$REMOTE_VERSION" ]; then
+            echo "Remote version: $REMOTE_VERSION"
+          else
+            echo "Remote version: not found"
+          fi
+          if [ "$REMOTE_VERSION" = "$LOCAL_VERSION" ]; then
+            echo "Version unchanged; skipping npm publish"
+            exit 0
+          fi
+      - name: Configure npm auth and publish
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm publish --access public

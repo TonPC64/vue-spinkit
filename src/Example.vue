@@ -9,7 +9,7 @@
         <a class="github-button" href="https://github.com/TonPC64/vue-spinkit/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork TonPC64/vue-spinkit on GitHub">Fork</a>
       </div>
     </div>
-    
+
     <div :key="spinner.name" v-for="spinner in allSpinner">
       <h2>{{spinner.name}}</h2>
       <div class="columns">
@@ -60,7 +60,7 @@ export default {
       })
     }
   },
-  mounted () {
+  beforeMount () {
     // load GitHub buttons script if not already loaded
     if (!document.getElementById('github-btn-script')) {
       const s = document.createElement('script')
