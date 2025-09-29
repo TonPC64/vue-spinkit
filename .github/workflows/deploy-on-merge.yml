@@ -34,7 +34,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: ./
+          path: ./dist
       - name: Deploy example to Surge
         run: |
           npm install --global surge
@@ -77,6 +77,6 @@ jobs:
           echo "npm pack dry-run to inspect tarball contents:"
           npm pack --dry-run
       - name: Configure npm auth and publish
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm publish --access public
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
