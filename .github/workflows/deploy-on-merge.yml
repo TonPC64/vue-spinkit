@@ -82,10 +82,17 @@ jobs:
             echo "should-publish=true" >> $GITHUB_OUTPUT
           fi
 
-  deploy-surge:
+  deploy-github-pages:
     if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download example build artifact
         uses: actions/download-artifact@v4
@@ -93,13 +100,17 @@ jobs:
           name: example-build
           path: ./dist
 
-      - name: Deploy example to Surge
-        run: |
-          npm install --global surge
-          echo "Deploying to vue-spinkit.surge.sh..."
-          surge ./dist vue-spinkit.surge.sh --token "${{ secrets.SURGE_TOKEN }}"
-        env:
-          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
   publish-npm:
     if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master' && needs.check-version.outputs.should-publish == 'true'
