@@ -14,7 +14,9 @@
   },
   "main": "build/vue-spinkit.common.js",
   "files": [
-    "build"
+    "build/vue-spinkit.common.js",
+    "README.md",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",
