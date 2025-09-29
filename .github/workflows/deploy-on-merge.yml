@@ -5,7 +5,7 @@ on:
     types: [closed]
 
 jobs:
-  deploy:
+  build:
     if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
     runs-on: ubuntu-latest
     steps:
@@ -19,12 +19,40 @@ jobs:
         run: npm ci
       - name: Build (library + example)
         run: npm run build && npm run build:example
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+  deploy-surge:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./
       - name: Deploy example to Surge
         run: |
           npm install --global surge
           SURGE_TOKEN="${{ secrets.SURGE_TOKEN }}"
           SURGE_DOMAIN="vue-spinkit.surge.sh"
           surge ./dist "$SURGE_DOMAIN" --token "$SURGE_TOKEN"
+
+  publish-npm:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Skip npm publish if version unchanged on npm
         run: |
           PKG_NAME=$(node -p "require('./package.json').name")
