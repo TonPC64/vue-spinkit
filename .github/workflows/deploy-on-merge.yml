@@ -25,14 +25,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
-
       - name: Build library
         run: npm run build
 
       - name: Build example
         run: npm run build:example
+
+      - name: Run smoke tests
+        run: npm test
 
       - name: Extract package info
         id: package-info
